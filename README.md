@@ -51,29 +51,46 @@ Explanation of what does the script:
 ------------------------------------
 1.1. Loads X_train.txt and X_test.txt files without headers 
    and binds in one data frame 'x'
+   
 1.2. Loads features.txt without header in one data frame
-1.3. Makes changes to the names of the features: 
+
+1.3. Makes changes to the names of the features
+
 1.4. Assigns the feature names to variable names of the data frame 'x'
+
 1.5. Converts 'x' to a tibble 'xt' in order to use the dplyr package functions
    Note that .name_repair="universal" is used in order to ensure unique
    variable names because fbodyacc_bandsenergy* variables are duplicated
    
 2. Creates a new tibble 'xts' selecting columns that contain the mean 
    and standard deviation
+   
 3.1 Loads y_train.txt and y_test.txt files without headers 
    and merges in one data frame 'y' and assigns the variable name.
    This data frame contains the activity code 
+   
 3.2 Creates a new tibble 'yt' from 'y'
+
 3.2 Loads activity_labels.txt and assigns column names and creates a new tibble
+
 3.3 Merges the labels and select only the variable name 'activity_name' which
     holds the descriptive name of the activity 
+    
 3.5 Binds the feature vector of means and standard deviations with the activity
    names in a new tibble 'result_step4'
+   
 4. Change the variable names of 'result_step_4'
+
 5.1 Loads subject information files: subject_train.txt and subject_test.txt
-    without headers and binds in a data frame 'subject' 
+    without headers and binds in a data frame 'subject'
+    
 5.2 Assigns the column_name 'subject_id'
+
 5.3 Creates a new tibble binding the feature-label tibble xt2 with the subject
+
 5.4 Groups by activity_name and subject_id
+
 5.5 And creates a new tibble 'result_step5'obtaining the mean of each variable
-5.6 prefix each variable name (except activity_name and subject_id) with 'average_'
+
+5.6 prefix each variable name (except activity_name and subject_id) 
+with 'average_'
