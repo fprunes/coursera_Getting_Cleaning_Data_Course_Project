@@ -72,3 +72,4 @@ names(result_step5) <- names53
 #write(names(result_step5),"names_result_step5.txt")
 #write.csv(result_step5,"result_step5.csv")
 
+write.table(result_step5,"result_step5_nonames.txt",row.names=FALSE)
